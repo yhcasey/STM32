@@ -1,0 +1,3 @@
+---- RTC_Month_Date_Definitions Matches (2 in 1 files) ----
+Stm32f4xx_rtc.h (fwlib\stm32f4xx_stdperiph_driver\inc):                        This parameter can be a value of @ref RTC_Month_Date_Definitions */
+Stm32f4xx_rtc.h (fwlib\stm32f4xx_stdperiph_driver\inc):/** @defgroup RTC_Month_Date_Definitions 

@@ -197,15 +197,16 @@ void RTC_WKUP_IRQHandler(void)
 }
  
 
-void RTC_Get_Time(struct TIME *rt)
+void RTC_Get_Time(struct RTCTime *rt)
 {
     RTC_TimeTypeDef RTC_TimeStruct;
     RTC_DateTypeDef RTC_DateStruct;
     RTC_GetTime(RTC_Format_BIN,&RTC_TimeStruct);
     RTC_GetDate(RTC_Format_BIN, &RTC_DateStruct);
-    rt->year = RTC_DateStruct.RTC_Year + 2000; //这里得到的年为后两位  如2018 得到的是18
+    rt->year = RTC_DateStruct.RTC_Year; //这里得到的年为后两位  如2018 得到的是18
     rt->month = RTC_DateStruct.RTC_Month;
     rt->date = RTC_DateStruct.RTC_Date;
+    rt->week = RTC_DateStruct.RTC_WeekDay; /*1-7*/
     rt->hour = RTC_TimeStruct.RTC_Hours;
     rt->min = RTC_TimeStruct.RTC_Minutes;
     rt->sec = RTC_TimeStruct.RTC_Seconds;
